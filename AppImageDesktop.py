@@ -180,7 +180,7 @@ class AppImgPkg:
 def main():
     parser = argparse.ArgumentParser(description="A command-line tool that simplifies the installation of AppImage applications on GNOME.")
     parser.add_argument('config', type=str, nargs='?', help='Path to the yaml configuration file.')
-    parser.add_argument('--config', type=str, help='Path to the yaml configuration file (optional).')
+    parser.add_argument('--config', type=str, help='Path to the yaml configuration file.')
     parser.add_argument('--debug', action='store_true', help='Enable debug mode (optional).')
 
     args = parser.parse_args()

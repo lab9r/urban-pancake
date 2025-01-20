@@ -17,11 +17,3 @@ source_url: https://github.com/keepassxreboot/keepassxc/releases/download/$pkgve
 gpg_identity: 'Good signature from "KeePassXC Release <release@keepassxc.org>"'
 gpg_primary: BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
 gpg_signature_url: https://github.com/keepassxreboot/keepassxc/releases/download/$pkgver/KeePassXC-$pkgver-x86_64.AppImage.sig
-
-# sha256sum
-
-# Exec=AppRun --no-sandbox %U
-
-# # relative to squashfs-root
-# icon_location
-# desktop_location

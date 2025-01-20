@@ -1,0 +1,20 @@
+pkgname: yubikey-manager-qt
+
+# relative to squashfs-root
+desktop_file: ykman-gui.desktop
+icon: ykman.png
+
+desktop_replace: |
+  Exec=$appimagebin
+
+
+pkgver: 1.2.5
+# use $pkgver as placeholder for version in url
+
+source_url: https://developers.yubico.com/yubikey-manager-qt/Releases/yubikey-manager-qt-$pkgver-linux.AppImage
+
+sha256sum: 6195a63935236b22ff91cfecc03007b748eb9877d1486d8b5a8033fef3757652 
+
+gpg_identity: 'Good signature from "Dennis Fokin <dennis.fokin@yubico.com>"'
+gpg_primary: 9E88 5C03 02F9 BB91 6752  9C2D 5CBA 11E6 ADC7 BCD1
+gpg_signature_url: https://developers.yubico.com/yubikey-manager-qt/Releases/yubikey-manager-qt-$pkgver-linux.AppImage.sig

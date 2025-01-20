@@ -1,0 +1,16 @@
+pkgname: lossless-cut
+# https://github.com/mifi/lossless-cut/releases/
+
+# relative to squashfs-root
+desktop_file: losslesscut.desktop
+icon: losslesscut.png
+
+desktop_replace: |
+  Exec=$appimagebin --no-sandbox %U
+
+pkgver: 3.64.0
+# use $pkgver as placeholder for version in url
+
+source_url: https://github.com/mifi/lossless-cut/releases/download/v$pkgver/LosslessCut-linux-x86_64.AppImage
+
+sha256sum: 2bdd1c26e24570890fb8042eb0970e0646793d0f13db9abb205221b662be8f37 
