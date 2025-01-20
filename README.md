@@ -38,12 +38,17 @@ This is for AppImages in general, not specific to this project.
 sudo apt install libfuse2 -y
  ```
 
-## uninstall
+## Default Directories
+`AppImageDesktop` uses specific directories for organizing installed applications. AppImages are stored in `~/appimages`, icons are placed in `~/.local/share/icons/`, and `.desktop` files are created in `~/.local/share/applications/`. This structure ensures that applications are easily accessible and integrated into the GNOME desktop environment.
+
+## Uninstall
 
 ```
 # find files
 find . ~/.local/share/applications ~/.local/share/icons -iname "*obsidian*"
+```
 
+```
 # delete files
 find . ~/.local/share/applications ~/.local/share/icons -iname "*obsidian*" --delete
 ```
