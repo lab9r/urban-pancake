@@ -1,0 +1,25 @@
+pkgname: cryptomator
+
+# relative to squashfs-root
+desktop_file: Cryptomator.desktop
+icon: usr/share/icons/hicolor/512x512/apps/org.cryptomator.Cryptomator.png
+
+desktop_replace: |
+  Exec=$appimagebin %F
+
+
+pkgver: 1.14.2
+sha256sum: ab819b4da5f8ec165ff2072266a4767c2ca781043c4e40efd001f8fc09cf31a1
+source_url: https://github.com/cryptomator/cryptomator/releases/download/$pkgver/cryptomator-$pkgver-x86_64.AppImage
+
+gpg_identity: 'Good signature from "Cryptobot <releases@cryptomator.org>"'
+gpg_primary: 5811 7AFA 1F85 B3EE C154  677D 615D 449F E6E6 A235
+gpg_signature_url: https://github.com/cryptomator/cryptomator/releases/download/$pkgver/cryptomator-$pkgver-x86_64.AppImage.asc
+
+# sha256sum
+
+# Exec=AppRun --no-sandbox %U
+
+# # relative to squashfs-root
+# icon_location
+# desktop_location

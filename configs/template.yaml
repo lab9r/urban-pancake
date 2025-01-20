@@ -1,0 +1,17 @@
+pkgname: 
+
+# relative to squashfs-root
+desktop_file: 
+icon: 
+
+desktop_replace: |
+  Exec=$appimagebin --no-sandbox %U
+
+
+pkgver: 
+# use $pkgver as placeholder for version in url
+
+source_url: 
+
+# or sha256sum
+sha512sum: 

@@ -1,0 +1,17 @@
+pkgname: lunatask
+
+# relative to squashfs-root
+desktop_file: lunatask.desktop
+icon: lunatask.png
+
+desktop_replace: |
+  Exec=$appimagebin --no-sandbox --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto %U
+
+
+pkgver: 2.0.15
+# use $pkgver as placeholder for version in url
+
+source_url: https://github.com/lunatask/lunatask/releases/download/v$pkgver/Lunatask-$pkgver.AppImage
+
+# or sha256sum
+sha512sum: 2ef459befab0b2dd9c2110baf354db618591313b531255e08a5266f89c991a0811765066ca4b57f2f511d10ba879d6f25650ad3966fe503277c83c93a9495886

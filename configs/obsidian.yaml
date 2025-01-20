@@ -1,0 +1,17 @@
+pkgname: obsidian
+
+# relative to squashfs-root
+desktop_file: obsidian.desktop
+icon: obsidian.png
+
+desktop_replace: |
+  Exec=$appimagebin --no-sandbox %U
+
+
+pkgver: 1.7.7
+# use $pkgver as placeholder for version in url
+
+source_url: https://github.com/obsidianmd/obsidian-releases/releases/download/v$pkgver/Obsidian-$pkgver.AppImage
+
+# or sha256sum
+sha512sum: 6af144dd94c8774f07373a5950b3c5c6f832ab74b34379547ad39e923733e8ba876edf5e788c6abc2f591ef00c99196cc1881ae1d27736b039133acece61fd69
