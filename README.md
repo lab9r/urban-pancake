@@ -1,7 +1,5 @@
 # AppImageDesktop
 
-## Overview
-
 `AppImageDesktop` is a Python command-line tool that simplifies the installation of AppImage applications on GNOME. It automates downloading, verifying, and installing AppImages while providing desktop integration through `.desktop` files. Inspired by the PKGBUILD approach, it uses a YAML configuration file to manage application details.
 
 ## Features
