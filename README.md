@@ -1,26 +1,29 @@
 # AppImageDesktop
 
-`AppImageDesktop` is a Python command-line tool that simplifies the installation of AppImage applications on GNOME. It automates downloading, verifying, and installing AppImages while providing desktop integration through `.desktop` files. Inspired by the PKGBUILD approach, it uses a YAML configuration file to manage application details.
+`AppImageDesktop` is a Python command-line tool that simplifies the installation of AppImage applications on GNOME. It automates downloading, verifying, and installing AppImages while providing desktop integration through `.desktop` files. Losely inspired by the PKGBUILD approach, it uses a YAML configuration file to manage application details.
 
 ## Features
 
 - **AppImage Desktop Integration**: Automatic shortcuts and icons using `.desktop` files.
 - **Customizable Using YAML**: Easy configuration via YAML files.
 - **Automatic Download**: Downloads AppImages automatically.
-- **GPG Signature Verification (Optional)**: Optional verification for authenticity.
+- **GPG Signature Verification (optional)**: Optional verification for authenticity.
 
 ## Usage
 
-Create a YAML configuration file for the AppImage you want to install. For examples see `configs` directory.
+Create a YAML configuration file for the AppImage you want to install. For examples see the `configs` directory.
 
 ```
 usage: AppImageDesktop.py [-h] [--config CONFIG] [--debug] [config]
 
+A command-line tool that simplifies the installation of AppImage applications on GNOME.
+
 positional arguments:
-  config           Path to the yaml file.
+  config           Path to the yaml configuration file.
 
 options:
-  --config CONFIG  Path to the yaml file.
+  -h, --help       Show this help message and exit,
+  --config CONFIG  Path to the yaml configuration file.
   --debug          Enable debug mode (optional).
 ```
 
@@ -43,12 +46,12 @@ sudo apt install libfuse2 -y
 
 ## Uninstall
 
+find files
 ```
-# find files
-find . ~/.local/share/applications ~/.local/share/icons -iname "*obsidian*"
+find ~/appimages ~/.local/share/applications ~/.local/share/icons -iname "*obsidian*"
 ```
 
+delete files
 ```
-# delete files
-find . ~/.local/share/applications ~/.local/share/icons -iname "*obsidian*" --delete
+find ~/appimages ~/.local/share/applications ~/.local/share/icons -iname "*obsidian*" --delete
 ```
