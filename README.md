@@ -4,12 +4,10 @@
 
 ## Features
 
-- **Download AppImage**: Fetches AppImage files from specified URLs.
-- **Hash Verification**: Validates file integrity using SHA256 or SHA512 checksums.
-- **GPG Signature Verification (optional)**: Confirms AppImage authenticity via GPG signatures.
-- **Desktop Entry Creation**: Generates `.desktop` files for easy application launching.
-- **Icon Management**: Copies application icons to the appropriate directory.
-- **YAML Configuration**: Easily add install scripts using yaml.
+- **AppImage Desktop Integration**: Automatic shortcuts and icons using `.desktop` files.
+- **Customizable Using YAML**: Easy configuration via YAML files.
+- **Automatic Download**: Downloads AppImages automatically.
+- **GPG Signature Verification (Optional)**: Optional verification for authenticity.
 
 ## Usage
 
