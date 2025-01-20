@@ -35,6 +35,9 @@ class AppImgPkg:
         self.INSTALL_DIR = os.path.expanduser("~/.local/share/applications")
         self.THUMBNAIL_DIR = os.path.expanduser("~/.local/share/icons/")
 
+        for path in [self.APPIMAGE_DIR, self.INSTALL_DIR, self.THUMBNAIL_DIR]:
+            os.makedirs(path, exist_ok=True)
+
     def _check_pkg(self):
         mandatory_keys = {"desktop_file", "desktop_replace", "icon", "pkgname", "pkgver", "source_url"}
         pkg_keys = set(self.pkg.keys())
@@ -42,7 +45,7 @@ class AppImgPkg:
         if "sha256sum" not in pkg_keys and "sha512sum" not in pkg_keys:
             missing_keys.add("sha{256,512}sum")
         if len(missing_keys) > 0:
-            raise Exception(f"Missing keys: {", ".join(missing_keys)}")
+            raise Exception(f"Missing keys: {', '.join(missing_keys)}")
 
     def _parses_pkg(self):
         self.pkg["source_url"] = self.pkg["source_url"].replace("$pkgver", self.pkg["pkgver"])
