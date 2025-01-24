@@ -10,13 +10,16 @@ from urllib.request import urlretrieve
 
 import yaml
 
+APPIMAGE_DIR = "~/appimages"
+INSTALL_DIR =  "~/.local/share/applications"
+THUMBNAIL_DIR = "~/.local/share/icons/"
 
 def urlretrieve_wrapper(url, filename):
 
     def printProgress(blocknum, bs, size):
-        percent = (blocknum * bs) / size
+        percent = min((blocknum * bs) / size, 1.0)
         done = "#" * int(40 * percent)
-        print(f'\r[{done:<40}] {percent:.1%}', end='')
+        print(f'\rDownloading {filename}: [{done:<40}] {percent:.1%}', end='')
 
     urlretrieve(url, filename, printProgress)
     print(end='\r')
@@ -31,9 +34,9 @@ class AppImgPkg:
                     
         self._parses_pkg()
 
-        self.APPIMAGE_DIR = os.path.expanduser("~/appimages")
-        self.INSTALL_DIR = os.path.expanduser("~/.local/share/applications")
-        self.THUMBNAIL_DIR = os.path.expanduser("~/.local/share/icons/")
+        self.APPIMAGE_DIR = os.path.expanduser(APPIMAGE_DIR)
+        self.INSTALL_DIR = os.path.expanduser(INSTALL_DIR)
+        self.THUMBNAIL_DIR = os.path.expanduser(THUMBNAIL_DIR)
 
         for path in [self.APPIMAGE_DIR, self.INSTALL_DIR, self.THUMBNAIL_DIR]:
             os.makedirs(path, exist_ok=True)
@@ -73,9 +76,9 @@ class AppImgPkg:
             file_content = fp.read()
             sha_hash.update(file_content)
         if sha_hash.hexdigest() != self.pkg[hash_algo]:
-            raise Exception("hashsum validation failed")
+            raise Exception(f"Hash verification failed for {filename}.")
         else:
-            print("hashsum ok..")
+            print(f"Hash verification successful for {filename}.")
 
         if "gpg_primary" in self.pkg:
             self._verify_gpg(filename)
@@ -114,9 +117,9 @@ class AppImgPkg:
             print(f"Error Output:\n{e.stderr}")
 
         if sig_valid:
-            print(f"gpg verification successful: {fn_appimage}")
+            print(f"gpg: Good signature for {fn_appimage}.")
         else:
-            raise Exception(f"gpg signature BAD")
+            raise Exception(f"gpg: BAD signature for {fn_appimage}!")
 
     def install_appimage(self, debug=False):
 
@@ -131,7 +134,10 @@ class AppImgPkg:
         with tempfile.TemporaryDirectory() as temp_dir:
             # Extract the AppImage to the temporary directory
             subprocess.run(
-                [appimage_path, "--appimage-extract"], cwd=temp_dir, check=True
+                [appimage_path, "--appimage-extract"],
+                cwd=temp_dir,
+                check=True,
+                stdout=subprocess.DEVNULL
             )
             if debug:
                 print(f"temp_dir: {temp_dir}")
@@ -158,8 +164,6 @@ class AppImgPkg:
 
             new_desktop_file = "".join(desktop_file)
             new_desktop_file = new_desktop_file.replace("$appimagebin", appimagebin)
-            # pdb.set_trace()
-            print(new_desktop_file)
 
             # copy stuff
 
