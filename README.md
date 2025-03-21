@@ -55,3 +55,8 @@ delete files
 ```
 find ~/appimages ~/.local/share/applications ~/.local/share/icons -iname "*obsidian*" --delete
 ```
+
+You may use `remove-appimage.sh` to remove a specific AppImage. For example:
+```
+./remove-appimage.sh obsidian
+```
