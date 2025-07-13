@@ -7,10 +7,10 @@ icon: usr/share/icons/hicolor/512x512/apps/joplin.png
 desktop_replace: |
   Exec=$appimagebin --no-sandbox %U
 
-
-pkgver: 3.2.11
+# https://github.com/laurent22/joplin/releases
+pkgver: 3.3.13
 # use $pkgver as placeholder for version in url
 
 source_url: https://github.com/laurent22/joplin/releases/download/v$pkgver/Joplin-$pkgver.AppImage
 
-sha512sum: c818b0ad9540e3af6c7295c6b19dba18bb2dfb19fe69bb78d63f0f2318b5d1f95dde99e86e74f693afa4f1535fce04f769ca5870d4bc00e1854025e63bc36309
+sha512sum: 1e9a8867766f398a4efbc7066cf7940cf3affa208e5a7ca3f240d25e57879b633e122d78ec7066c2152b21e369a313881fd0fc189a11edc7aa10d7ba6eb4984b
