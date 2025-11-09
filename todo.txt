@@ -1,1 +1,4 @@
+sha256 from base64
+config update script
 
+mac stuff?
