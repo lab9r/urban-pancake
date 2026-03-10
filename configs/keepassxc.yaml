@@ -9,8 +9,8 @@ desktop_replace: |
   TryExec=$appimagebin
 
 # https://github.com/keepassxreboot/keepassxc/tags
-pkgver: 2.7.10
-sha256sum: 3f8308a4d905d067367d541b4dccd5e80700798039046ffc388ede4f50887b36
+pkgver: 2.7.12
+sha256sum: 564fe8b751b9ef7aa057e4d3d0b2878db24eaa0f6b1c855c82e699ab0913ae49
 
 source_url: https://github.com/keepassxreboot/keepassxc/releases/download/$pkgver/KeePassXC-$pkgver-x86_64.AppImage
 

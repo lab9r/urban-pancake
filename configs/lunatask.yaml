@@ -8,10 +8,10 @@ desktop_replace: |
   Exec=$appimagebin --no-sandbox --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto %U
 
 # https://github.com/lunatask/lunatask/releases/
-pkgver: 2.1.15
+pkgver: 2.1.23
 # use $pkgver as placeholder for version in url
 
 source_url: https://github.com/lunatask/lunatask/releases/download/v$pkgver/Lunatask-$pkgver.AppImage
 
 # or sha256sum
-sha256sum: 91bdedf1f426268833c89fcb92a3865a175630580f6dfce30fa9b98c35a4e118
+sha256sum: 22f40d739db1775df30b232701746f1bf836c401981aa0b6764e041eef30d068
