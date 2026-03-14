@@ -8,8 +8,8 @@ desktop_replace: |
   Exec=$appimagebin %F
 
 # https://github.com/cryptomator/cryptomator/releases
-pkgver: 1.19.0
-sha256sum: 42bb500d5257f34a2ee220ada58ab49c28861492dd22183fb77c692ba39f11e6
+pkgver: 1.19.1
+sha256sum: 6acfccb9368731a96c375a1ec26666c93fd5735c03d200b9bf37d6e290a18116
 source_url: https://github.com/cryptomator/cryptomator/releases/download/$pkgver/cryptomator-$pkgver-x86_64.AppImage
 
 gpg_identity: 'Good signature from "Cryptobot <releases@cryptomator.org>"'
